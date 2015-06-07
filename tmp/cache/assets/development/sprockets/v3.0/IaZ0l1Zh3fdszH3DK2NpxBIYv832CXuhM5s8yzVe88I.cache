@@ -1,0 +1,10 @@
+I"}(function() {
+  window.Playdate = {
+    Models: {},
+    Collections: {},
+    Routers: {},
+    Views: {}
+  };
+
+}).call(this);
+:ET

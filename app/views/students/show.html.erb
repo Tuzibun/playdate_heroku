@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+<div class="info-container">
+  <h2><%= @student.first_name %> <%= @student.last_name %></h2>
+  <div class="photo-container">
+    <img src= <%= @student.image %> alt="Student photo goes here" height="300" width="300">
+  </div>
+  <div class="profile-container">
+
+    <h3>Gender: <span><%= @student.gender %></span></h3>
+    <h3>Parent 1: <span><%= @student.parent1 %></span></h3>
+    <h3>Parent 2: <span><%= @student.parent2 %></span></h3>
+    <h3>Classroom: <span><%= @student.classroom %></span></h3>
+    <p style="text-align: center">
+      <%= link_to "Send Message", new_conversation_path, :id => "send-message", :class => "btn btn-primary" %>
+      
+    </p>
+    <p class="profile-actions", style="text-align: center">
+      <%= link_to "Edit", edit_student_path(@student), :id => "edit", :class => "btn btn-warning edit-student" %>
+      <%= link_to "Back", students_path, :id => "back", :class => "btn btn-info edit-student" %>
+    </p>
+  </div>
+</div>
+</div>
+

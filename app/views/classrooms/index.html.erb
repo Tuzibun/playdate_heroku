@@ -1,0 +1,46 @@
+<h1>Classrooms</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Classroom Id</th>
+      <th>Classroom Name</th>
+      <th>Teacher</th>
+      <th># of students</th>
+      <th>Actions</th>
+    </tr>
+    <tr>
+      <%= form_for Classroom.new do |f| %>
+        <td></td>
+        <td>
+          <%= f.text_field :name, :class => "form-control" %>
+        </td>
+        <td><%= f.text_field :teacher, :class => "form-control" %></td>
+        <td></td>
+        <td style="text-align: center">
+          <%= f.submit :class => "btn btn-primary add-classroom "%>
+        </td>
+        <% end %>
+      </tr>
+  </thead>
+
+  <tbody>
+    <% @classrooms.each do |classroom| %>
+      <tr>
+        <td><%= classroom.id %></td>
+        <td style="text-decoration: underline; 
+                   color: blue">
+          <%= link_to classroom.name, classroom %>
+        </td>
+        <td><%= classroom.teacher %></td>
+        <td>n/a</td>
+        <!-- action buttons -->
+        <td>
+          <%= link_to "Edit", edit_student_path(classroom), :id => "edit", :class => "btn btn-warning edit-classroom" %>
+          <%= link_to "Erase", classroom, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger delete-classroom" %>
+        </td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
