@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
+  resources :roles
   resources :classrooms
-  devise_for :users
   resources :students
-  devise_for :admins
+  devise_for :users
+  scope "/admin" do
+    resources :users
+  end
+
   root to: 'welcome#index'
-  resources :classrooms
 
   # mailbox folder routes
   get "mailbox/inbox" => "mailbox#inbox", as: :mailbox_inbox

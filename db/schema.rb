@@ -102,8 +102,10 @@ ActiveRecord::Schema.define(version: 20150605014209) do
     t.string   "classroom"
     t.string   "parent1"
     t.string   "parent2"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "classroom_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -117,6 +119,7 @@ ActiveRecord::Schema.define(version: 20150605014209) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
+    t.boolean  "admin"
     t.string   "name"
   end
 

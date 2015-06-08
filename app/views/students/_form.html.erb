@@ -1,45 +1,31 @@
-<%= form_for(@student) do |f| %>
-  <% if @student.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
 
-      <ul>
-      <% @student.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_for Student.new do |f| %>
 
-  <div class="field">
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :gender %><br>
-    <%= f.text_field :gender %>
-  </div>
-  <div class="field">
-    <%= f.label :image %><br>
-    <%= f.text_field :image %>
-  </div>
-  <div class="field">
-    <%= f.label :classroom %><br>
-    <%= f.text_field :classroom %>
-  </div>
-  <div class="field">
-    <%= f.label :parent1 %><br>
-    <%= f.text_field :parent1 %>
-  </div>
-  <div class="field">
-    <%= f.label :parent2 %><br>
-    <%= f.text_field :parent2 %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+        <td>
+          <%= f.text_field :first_name, :class => "form-control" %>
+        </td>
+        <td>
+          <%= f.text_field :last_name, :class => "form-control" %>
+        </td>
+        <td>
+          <%= f.text_field :gender, :class => "form-control" %>
+        </td>
+        <td>
+          <%= f.text_field :image, :class => "form-control" %>
+        </td>
+        <td>
+          <%= f.text_field :classroom, :class => "form-control" %>
+        </td>
+        <td>
+          <%= f.text_field :parent1, :class => "form-control" %>
+        </td>
+        <td>
+          <%= f.text_field :parent2, :class => "form-control" %>
+        </td>
+        <td>
+          <%= f.submit :class => "btn btn-primary add-student "%>
+        </td>
+        <% end %>
+      </tr>
+  </thead>
+  
