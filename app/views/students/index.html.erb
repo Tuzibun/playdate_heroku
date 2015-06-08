@@ -1,3 +1,5 @@
+<p id="notice"><%= notice %></p>
+
 <h1>Students</h1>
 
 <table class="table">
@@ -13,8 +15,34 @@
       <th>Actions</th>
     </tr>
     <tr>
-  
-<%= render partial: 'form' %>
+      <%= form_for Student.new do |f| %>
+        <td>
+          <%= f.text_field :first_name, :class => "form-control" %>
+        </td>
+        <td>
+          <%= f.text_field :last_name, :class => "form-control" %>
+        </td>
+        <td>
+          <%= f.text_field :gender, :class => "form-control" %>
+        </td>
+        <td>
+          <%= f.text_field :image, :class => "form-control" %>
+        </td>
+        <td>
+          <%= f.text_field :classroom, :class => "form-control" %>
+        </td>
+        <td>
+          <%= f.text_field :parent1, :class => "form-control" %>
+        </td>
+        <td>
+          <%= f.text_field :parent2, :class => "form-control" %>
+        </td>
+        <td>
+          <%= f.submit :class => "btn btn-primary add-student "%>
+        </td>
+        <% end %>
+      </tr>
+  </thead>
 
   <tbody>
     <% @students.each do |student| %>

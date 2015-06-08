@@ -8,8 +8,6 @@ class CreateStudents < ActiveRecord::Migration
       t.string :classroom
       t.string :parent1
       t.string :parent2
-      t.belongs_to :user
-      t.belongs_to :classroom
 
       t.timestamps null: false
     end
