@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'cancancan', '~> 1.10'
 gem "better_errors"
 gem "binding_of_caller"
 gem "devise"
